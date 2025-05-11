@@ -1,0 +1,163 @@
+/* General Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--container-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: var(--text-color);
+}
+
+/* Theme Variables */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #222;
+    --container-bg: #fff;
+    --btn-bg: #1a73e8;
+    --btn-hover: #1557b0;
+}
+
+body.dark {
+    --bg-color: #222;
+    --text-color: #f9f9f9;
+    --container-bg: #333;
+    --btn-bg: #4a90e2;
+    --btn-hover: #357abd;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--btn-bg);
+    color: #fff;
+    font-size: 16px;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Image Gallery */
+.image-gallery {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 5px;
+}
+
+.gallery-img.active {
+    display: block;
+    animation: fade 0.5s ease-in-out;
+}
+
+.gallery-img.animate {
+    animation: scalePulse 0.5s ease-in-out;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+}
+
+input:focus {
+    border-color: var(--btn-bg);
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+}
+
+.error {
+    color: #d32f2f;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Messages */
+p {
+    color: var(--text-color);
+}
+
+/* Animations */
+@keyframes scalePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Apply fade-in on page load */
+.container {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    button, input {
+        font-size: 14px;
+    }
+    .image-gallery {
+        height: 150px;
+    }
+}
