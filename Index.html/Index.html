@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations & LocalStorage Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Animations & LocalStorage Demo</h1>
+
+        <!-- Theme Toggle -->
+        <section id="theme-toggle">
+            <h2>Theme Toggle</h2>
+            <button id="theme-btn">Toggle Theme</button>
+            <p id="theme-message">Click to switch between light and dark mode!</p>
+        </section>
+
+        <!-- Animated Image -->
+        <section id="animated-image">
+            <h2>Animated Image</h2>
+            <img src="https://unsplash.com/photos/a-dark-room-with-a-ladder-leading-up-to-a-bright-blue-sky-Nw9eGrtSHEY" alt="Animated Image" id="animated-img">
+            <p>Click the image to trigger a scaling animation!</p>
+        </section>
+
+        <!-- User Preferences Form -->
+        <section id="preferences-form">
+            <h2>User Preferences</h2>
+            <form id="prefForm" novalidate>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <span class="error" id="username-error"></span>
+                </div>
+                <button type="submit">Save Preferences</button>
+            </form>
+            <p id="pref-message">Your preferences are saved to localStorage!</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
